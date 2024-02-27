@@ -5,7 +5,7 @@ if (isset($_POST['uname']) &&
 	isset($_POST['pass']) &&
 	isset($_POST['role'])) {
 
-	include "../DB_connection.php";
+	include "DB_connection.php";
 	
 	$uname = $_POST['uname'];
 	$pass = $_POST['pass'];
@@ -13,15 +13,15 @@ if (isset($_POST['uname']) &&
 
 	if (empty($uname)) {
 		$em = "Username is required";
-		header("Location: ../login.php?error=$em");
+		header("Location: login.php?error=$em");
 		exit;
 	}else if (empty($pass)) {
 		$em = "Password is required";
-		header("Location: ../login.php?error=$em");
+		header("Location: login.php?error=$em");
 		exit;
 	}else if (empty($role)) {
 		$em = "An error Occurred";
-		header("Location: ../login.php?error=$em");
+		header("Location: login.php?error=$em");
 		exit;
 	}else {
 		
@@ -50,30 +50,30 @@ if (isset($_POST['uname']) &&
 					if ($role == 'Admin') {
 						$id = $user['admin_id'];
 						$_SESSION['admin_id'] = $id;
-						header("Location: ../admin/index.php");
+						header("Location: index.php");
 					    exit;
 					}
 
 				}else {
 					$em = "Incorrect Username or Password";
-					header("Location: ../login.php?error=$em");
+					header("Location: login.php?error=$em");
 					exit;
 			}
 			}else {
 				$em = "Incorrect Username or Password";
-				header("Location: ../login.php?error=$em");
+				header("Location: login.php?error=$em");
 				exit;
 			}
 
 		}else {
 			$em = "Incorrect Username or Password";
-			header("Location: ../login.php?error=$em");
+			header("Location: login.php?error=$em");
 			exit;
 		}
 	}
 
 }else{
-	header("Location: ../login.php");
+	header("Location: login.php");
 	exit;
 }
 
