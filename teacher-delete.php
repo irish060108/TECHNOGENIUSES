@@ -5,8 +5,8 @@ if (isset($_SESSION['admin_id']) &&
 	isset($_GET['teacher_id'])) {
 
 	if ($_SESSION['role'] == 'Admin'){
-		include "../DB_connection.php";
-		include "data/teacher.php";
+		include "DB_connection.php";
+		include "teacherrr.php";
 
 		$id = $_GET['teacher_id'];
 		if (removeTeacher($id, $conn)){
@@ -21,10 +21,10 @@ if (isset($_SESSION['admin_id']) &&
 
 
 	}else {
-	header("Location: teacher.php");
+	header("Location: teachers.php");
 	exit;
 } 
 	}else {
-	header("Location: teacher.php");
+	header("Location: teachers.php");
 	exit;
 } 
