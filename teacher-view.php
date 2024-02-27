@@ -4,10 +4,10 @@ if (isset($_SESSION['admin_id']) &&
 	isset($_SESSION['role'])) {
 
 	if ($_SESSION['role'] == 'Admin'){
-		include "../DB_connection.php";
-		include "data/teacher.php";
-		include "data/subject.php";
-		include "data/grade.php";
+		include "DB_connection.php";
+		include "teacherrr.php";
+		include "subjecttt.php";
+		include "gradeee.php";
 
 		if(isset($_GET['teacher_id'])){
 		$teacher_id = $_GET['teacher_id'];
@@ -21,14 +21,14 @@ if (isset($_SESSION['admin_id']) &&
 	initial-scale=1.0">
 	<title>Admin - Teachers</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<link rel="icon" href="../logo.png">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="logo.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 	<?php
-		include "inc/navbar.php";
+		include "navbar.php";
 		if ($teacher != 0){
 	?>
 	<div class="container mt-5">
@@ -106,11 +106,11 @@ if (isset($_SESSION['admin_id']) &&
 	exit;
 }
 	}else {
-	header("Location: ../login.php");
+	header("Location: login.php");
 	exit;
 } 
 	}else {
-	header("Location: ../login.php");
+	header("Location: login.php");
 	exit;
 } 
  ?>
