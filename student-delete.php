@@ -5,8 +5,8 @@ if (isset($_SESSION['admin_id']) &&
 	isset($_GET['student_id'])) {
 
 	if ($_SESSION['role'] == 'Admin'){
-		include "../DB_connection.php";
-		include "data/student.php";
+		include "DB_connection.php";
+		include "student.php";
 
 		$id = $_GET['student_id'];
 		if (removeStudent($id, $conn)){
