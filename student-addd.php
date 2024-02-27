@@ -24,9 +24,9 @@ if (isset($_POST['lrn']) &&
 	isset($_POST['grade'])) {
 
 
-	include '../../DB_connection.php';
-	include "../data/teacher.php";
-	include "../data/student.php";
+	include 'DB_connection.php';
+	include "teacherrr.php";
+	include "studenttt.php";
 
 	$lrn = $_POST['lrn'];
 	$fname = $_POST['fname'];
@@ -52,71 +52,71 @@ if (isset($_POST['lrn']) &&
 	
 	if (empty($lrn)) {
 		$em = "LRN is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (!lrnIsUnique($lrn, $conn)) {
 		$em = "LRN is taken! try another";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($fname)) {
 		$em = "First Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($lname)) {
 		$em = "Last Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($mname)) {
 		$em = "Middle Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($uname)) {
 		$em = "Username is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (!unameIsUnique($uname, $conn)) {
 		$em = "Username is taken! try another";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($pass)) {
 		$em = "Password is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else if (empty($address)) {
 		$em = "Address is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($gender)) {
 		$em = "Gender is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($email_address)) {
 		$em = "Email Address is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($parent_fname)) {
 		$em = "Parent First Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($parent_lname)) {
 		$em = "Parent Last Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($parent_mname)) {
 		$em = "Parent Middle Name is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($parent_phone_number)) {
 		$em = "Parent Phone Number is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($section)) {
 		$em = "Section is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 		}else if (empty($pass)) {
 		$em = "Password is required";
-		header("Location: ../student-add.php?error=$em&$data");
+		header("Location: student-add.php?error=$em&$data");
 		exit;
 	}else {
 		// hashing the password
@@ -128,20 +128,20 @@ if (isset($_POST['lrn']) &&
 		$stmt = $conn->prepare($sql);
 		$stmt->execute([$uname, $lrn, $pass, $fname, $lname, $mname, $grade, $section, $address, $gender, $email_address, $date_of_birth, $parent_fname, $parent_lname, $parent_mname, $parent_phone_number]);
 		$sm = "New Student Registered Successfully";
-		header("Location: ../student-add.php?success=$sm");
+		header("Location: student-add.php?success=$sm");
 		exit;
 	}
 
 	}else{
 		$em = "An Error Occured";
-	header("Location: ../student-add.php?error=$em");
+	header("Location: student-add.php?error=$em");
 	exit;
 }
 	}else {
-	header("Location: ../../logout.php");
+	header("Location: logout.php");
 	exit;
 }
 	}else {
-	header("Location: ../../logout.php");
+	header("Location: logout.php");
 	exit;
 } 
