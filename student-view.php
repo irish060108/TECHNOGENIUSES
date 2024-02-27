@@ -5,9 +5,9 @@ if (isset($_SESSION['admin_id']) &&
 
 	if ($_SESSION['role'] == 'Admin'){
 		include "DB_connection.php";
-		include "student.php";
-		include "subject.php";
-		include "grade.php";
+		include "studenttt.php";
+		include "subjecttt.php";
+		include "gradeee.php";
 
 		if(isset($_GET['student_id'])){
 		$student_id = $_GET['student_id'];
