@@ -4,9 +4,9 @@ if (isset($_SESSION['admin_id']) &&
 	isset($_SESSION['role'])) {
 
 	if ($_SESSION['role'] == 'Admin'){
-		include "DB_connection.php";
-		include "student.php";
-		include "grade.php";
+		include "DB_connection.html";
+		include "studenttt.html";
+		include "gradeee.htm";
 		$students = getAllStudents($conn);
 ?>
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ if (isset($_SESSION['admin_id']) &&
 </head>
 <body>
 	<?php
-		include "navbar.php";
+		include "navbar.html";
 		if ($students != 0){
 	?>
 	<div class="container mt-5">
@@ -81,7 +81,7 @@ if (isset($_SESSION['admin_id']) &&
 				      <td><?=$student['student_id']?></td>
 				      <td><?=$student['lrn']?></td>
 				      <td>
-				      	<a href="student-view.php?student_id=<?=$student['student_id']?>">
+				      	<a href="student-view.html?student_id=<?=$student['student_id']?>">
 				      		<?=$student['fname']?>
 				      	</a>
 				      </td>
@@ -125,11 +125,11 @@ if (isset($_SESSION['admin_id']) &&
 </html>
 <?php 
 	}else {
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 } 
 }else {
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 } 
  ?>
