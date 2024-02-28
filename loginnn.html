@@ -5,7 +5,7 @@ if (isset($_POST['uname']) &&
 	isset($_POST['pass']) &&
 	isset($_POST['role'])) {
 
-	include "DB_connection.php";
+	include "DB_connection.html";
 	
 	$uname = $_POST['uname'];
 	$pass = $_POST['pass'];
@@ -50,30 +50,30 @@ if (isset($_POST['uname']) &&
 					if ($role == 'Admin') {
 						$id = $user['admin_id'];
 						$_SESSION['admin_id'] = $id;
-						header("Location: index.php");
+						header("Location: index.html");
 					    exit;
 					}
 
 				}else {
 					$em = "Incorrect Username or Password";
-					header("Location: login.php?error=$em");
+					header("Location: login.html?error=$em");
 					exit;
 			}
 			}else {
 				$em = "Incorrect Username or Password";
-				header("Location: login.php?error=$em");
+				header("Location: login.html?error=$em");
 				exit;
 			}
 
 		}else {
 			$em = "Incorrect Username or Password";
-			header("Location: login.php?error=$em");
+			header("Location: login.html?error=$em");
 			exit;
 		}
 	}
 
 }else{
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 }
 
