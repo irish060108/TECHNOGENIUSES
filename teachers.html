@@ -4,10 +4,10 @@ if (isset($_SESSION['admin_id']) &&
 	isset($_SESSION['role'])) {
 
 	if ($_SESSION['role'] == 'Admin'){
-		include "DB_connection.php";
-		include "teacherrr.php";
-		include "subjecttt.php";
-		include "gradeee.php";
+		include "DB_connection.html";
+		include "teacherrr.html";
+		include "subjecttt.html";
+		include "gradeee.html";
 		$teachers = getAllTeachers($conn);
 		$subjects = getAllSubjects($conn);
 		$grades = getAllGrades($conn);
@@ -27,7 +27,7 @@ if (isset($_SESSION['admin_id']) &&
 </head>
 <body>
 	<?php
-		include "navbar.php";
+		include "navbar.html";
 		if ($teachers != 0){
 	?>
 	<div class="container mt-5">
@@ -111,9 +111,9 @@ if (isset($_SESSION['admin_id']) &&
 				      	?>
 					   </td>
 				      <td>
-				      		<a href="teacher-edit.php?teacher_id=<?=$teacher['teacher_id']?>"
+				      		<a href="teacher-edit.html?teacher_id=<?=$teacher['teacher_id']?>"
 				      		   class="btn btn-warning">Edit</a>
-				      		<a href="teacher-delete.php?teacher_id=<?=$teacher['teacher_id']?>"
+				      		<a href="teacher-delete.html?teacher_id=<?=$teacher['teacher_id']?>"
 				      		   class="btn btn-danger">Delete</a>
 				      </td>
 				    </tr>
@@ -139,11 +139,11 @@ if (isset($_SESSION['admin_id']) &&
 </html>
 <?php 
 	}else {
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 } 
 }else {
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 } 
  ?>
