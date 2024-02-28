@@ -29,7 +29,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['role'])) {
 	  				?>
 	  			</b><br>
 	  			<h3 class="display-4"> <?=$_SESSION['fname']?></h3>
-	  			<a href="logout.php" class="btn btn-warning">
+	  			<a href="logout.html" class="btn btn-warning">
 	  				Logout
 	  			</a>
 	  		</small>
@@ -40,7 +40,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['role'])) {
 </body>
 </html>
 <?php }else {
-	header("Location: login.php");
+	header("Location: login.html");
 	exit;
 } 
  ?>
