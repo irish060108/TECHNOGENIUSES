@@ -13,15 +13,15 @@ if (isset($_POST['uname']) &&
 
 	if (empty($uname)) {
 		$em = "Username is required";
-		header("Location: login.php?error=$em");
+		header("Location: login.html?error=$em");
 		exit;
 	}else if (empty($pass)) {
 		$em = "Password is required";
-		header("Location: login.php?error=$em");
+		header("Location: login.html?error=$em");
 		exit;
 	}else if (empty($role)) {
 		$em = "An error Occurred";
-		header("Location: login.php?error=$em");
+		header("Location: login.html?error=$em");
 		exit;
 	}else {
 		
